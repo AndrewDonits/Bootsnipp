@@ -34,7 +34,7 @@ public class BaseFunctions {
                 "C:/Users/andon/IdeaProjects/Bootsnipp/src/main/Configuration/chromedriver.exe");
         driver = new ChromeDriver();
         action = new Actions(driver);
-        driverWait = new WebDriverWait(driver, 10);
+        driverWait = new WebDriverWait(driver, 3);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(URL);
@@ -47,7 +47,7 @@ public class BaseFunctions {
      */
     @AfterMethod
     public void afterMethod() {
-
+        driver.close();
     }
 
     @AfterClass
